@@ -2,9 +2,12 @@ const express = require('express');
 const {graphqlHTTP} = require('express-graphql');
 const schema = require('./schema/schema')
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 const app = express();
 
+
+app.use(cors());
 const url = 'mongodb+srv://TranHyKhang:TranHyKhang@cluster0.sjl1v.mongodb.net/graphql-learning?retryWrites=true&w=majority'
 
 mongoose.connect(url);
